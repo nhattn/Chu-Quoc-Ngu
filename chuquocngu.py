@@ -24,6 +24,14 @@ def get_nchars(text, start=1, end=2):
         chars = chars.replace(ch, nh)
     return chars.lower()
 
+# Hàm kiểm tra chuỗi là một số thực hoặc số nguyên
+def is_number(s):
+    v = s.lstrip('-')
+    v = v.lstrip('+')
+    v = v.replace(',','')
+    v = v.replace('.','')
+    return v.isdigit()
+
 # Kiểm tra một từ có phải là chữ quốc ngữ hay không ?
 def isVNESE(syllabel):
     ch = syllabel[0:1].lower() # Lấy chữ cái đầu tiên để kiểm tra
@@ -36,7 +44,7 @@ def isVNESE(syllabel):
             return True
         return False
     # Nếu là một con số nào đó thì là đúng
-    if syllabel.isdigit():
+    if is_number(syllabel):
         return True
     ch = chars_map.get(ch, ch)
     # Tiến hành kiểm tra tính hợp lệ của các nguyên âm
