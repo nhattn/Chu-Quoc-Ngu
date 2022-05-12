@@ -100,7 +100,7 @@ def isVNESE(syllabel):
         return False
     if ch == 'ê':
         chk = get_nchars(syllabel,0,3)
-        if chk in ['êch', 'ênh']:
+        if chk in ['êch', 'ênh','êng']:
             if syllabel[3:4]:
                 return False
             return True
@@ -189,7 +189,7 @@ def isVNESE(syllabel):
         if len(chk) > 2:
             return False
         if get_nchars(syllabel,0,2) in ['ua', 'uc', 'ui', 'um', 'un', 'up',
-                                                        'ut','uơ','uy']:
+                                                      'uê','ut','uơ','uy']:
             if syllabel[2:3]:
                 return False
             return True
@@ -224,7 +224,7 @@ def isVNESE(syllabel):
         if len(chk) > 3:
             return False
         chk = get_nchars(syllabel,0,3)
-        if chk in ['yêm', 'yên', 'yêt', 'yêu']:
+        if chk in ['yêm', 'yên', 'yêt', 'yêu', 'ynh']:
             if syllabel[3:4]:
                 return False
             return True
